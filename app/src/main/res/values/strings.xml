@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Expense Tracker</string>
+    <string name="settings">Settings</string>
+    <string name="graph">Graph</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="homeLabel">Home</string>
+    <string name="graph_label">Past 6 Days Spending</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+   <string name="addExp">Add Expense</string>
+   <string name="expTitle">Expense Title</string>
+   <string name="expAmount">Expense Amount</string>
+   <string name="crrDT">Use current Date and Time</string>
+   <string name="sub">Submit</string>
+</resources>

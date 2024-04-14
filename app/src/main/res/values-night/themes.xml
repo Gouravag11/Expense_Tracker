@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ExpenseTracker" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+    <style name="expTr" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="backgroundTint">@color/secret_society</item>
+        <item name="colorPrimary">@color/anecdote</item>
+        <item name="android:background">@color/secret_society</item>
+        <item name="android:backgroundTint">@color/secret_society</item>
+
+    </style>
+
+    <style name="onexpTr" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/london_house</item>
+        <item name="backgroundTint">@color/london_house</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/london_house</item>
+    </style>
+</resources>

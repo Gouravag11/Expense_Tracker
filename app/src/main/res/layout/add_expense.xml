@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/expTr">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/round_bg"
+        style="@style/expTr">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:text="@string/addExp"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/exp_title"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="30dp"
+            android:hint="@string/expTitle"
+            android:inputType="text|textCapCharacters"
+            android:textColorHint="#212121"
+            tools:ignore="VisualLintTextFieldSize"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/exp_amount"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginRight="30dp"
+            android:autofillHints=""
+            android:hint="@string/expAmount"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:textColorHint="#212121"
+            tools:ignore="VisualLintTextFieldSize" />
+
+        <CheckBox
+            android:id="@+id/useCrrDT"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="30dp"
+            android:checked="true"
+            android:text="@string/crrDT"/>
+
+        <Button
+            android:id="@+id/exp_time"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="260dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/round_bg"
+            style="@style/onexpTr"
+            app:icon="@drawable/calender"
+            app:iconGravity="end" />
+
+        <Button
+            android:id="@+id/addExp"
+            android:layout_width="match_parent"
+            android:layout_height="70sp"
+            style="@style/onexpTr"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="320dp"
+            android:text="@string/sub" android:textSize="24sp"
+            android:textStyle="bold"
+            android:contentDescription="@string/addExp"
+            tools:ignore="VisualLintButtonSize" />
+    </FrameLayout>
+</FrameLayout>

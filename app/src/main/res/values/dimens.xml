@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="TITLE_WIDTH">100sp</dimen>
+    <dimen name="AMOUNT_WIDTH">140sp</dimen>
+    <dimen name="DATE_WIDTH">50sp</dimen>
+</resources>

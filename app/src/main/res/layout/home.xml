@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:background="@drawable/square_bg"
+        style="@style/onexpTr">
+
+        <Button
+            android:id="@+id/viewTitle"
+            style="@style/onexpTr"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:layout_marginLeft="0dp"
+            android:background="@drawable/square_bg"
+            android:text="Title"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/viewAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/square_bg"
+            android:layout_gravity="center"
+            style="@style/onexpTr"
+            android:text="Amount"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/viewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@drawable/square_bg"
+            style="@style/onexpTr"
+            android:text="Date ▼"
+            android:textSize="20sp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableLayout
+            android:id="@+id/Expenses"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>
