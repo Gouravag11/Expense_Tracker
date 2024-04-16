@@ -5,6 +5,8 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
         dbDate = new SimpleDateFormat("yyyy-MM-dd hh:mm");
         dbhelper = new DatabaseHelper(this);
 
-
-
         setSupportActionBar(binding.appBarMain.toolbar);
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
@@ -66,47 +66,7 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this)
-                        .setView(R.layout.add_expense);
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
-                exp_title = alertDialog.findViewById(R.id.exp_title);
-                exp_amount = alertDialog.findViewById(R.id.exp_amount);
-                useCrrDT = alertDialog.findViewById(R.id.useCrrDT);
-                addExp = alertDialog.findViewById(R.id.addExp);
-                exp_time = alertDialog.findViewById(R.id.exp_time);
-
-                if(useCrrDT.isChecked()){
-                    exp_time.setText(dateFormat.format(Calendar.getInstance().getTime()));
-                    exp_time.setEnabled(false);
-                }
-                useCrrDT.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if(useCrrDT.isChecked()){
-                            exp_time.setText(dateFormat.format(Calendar.getInstance().getTime()));
-                            exp_time.setEnabled(false);
-                        }
-                        if(!useCrrDT.isChecked()){
-                            exp_time.setText("");
-                            exp_time.setEnabled(true);
-                        }
-                    }
-                });
-
-                exp_time.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        pickDateTime();
-                    }
-                });
-
-                addExp.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        addExpense(alertDialog);
-                    }
-                });
+                addExDialog();
             }
         });
     }
@@ -136,6 +96,51 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         new DatePickerDialog(MainActivity.this,dateListener,c.get(Calendar.YEAR),c.get(Calendar.MONTH),c.get(Calendar.DAY_OF_MONTH)).show();
+    }
+
+    public void addExDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this)
+                .setView(R.layout.add_expense);
+        AlertDialog alertDialog = builder.create();
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        alertDialog.show();
+        exp_title = alertDialog.findViewById(R.id.exp_title);
+        exp_amount = alertDialog.findViewById(R.id.exp_amount);
+        useCrrDT = alertDialog.findViewById(R.id.useCrrDT);
+        addExp = alertDialog.findViewById(R.id.addExp);
+        exp_time = alertDialog.findViewById(R.id.exp_time);
+
+        if(useCrrDT.isChecked()){
+            exp_time.setText(dateFormat.format(Calendar.getInstance().getTime()));
+            exp_time.setEnabled(false);
+        }
+        useCrrDT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(useCrrDT.isChecked()){
+                    exp_time.setText(dateFormat.format(Calendar.getInstance().getTime()));
+                    exp_time.setEnabled(false);
+                }
+                if(!useCrrDT.isChecked()){
+                    exp_time.setText("");
+                    exp_time.setEnabled(true);
+                }
+            }
+        });
+
+        exp_time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pickDateTime();
+            }
+        });
+
+        addExp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addExpense(alertDialog);
+            }
+        });
     }
 
     public void addExpense(AlertDialog alertDialog){

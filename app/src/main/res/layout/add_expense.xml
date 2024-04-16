@@ -31,7 +31,7 @@
             android:layout_marginTop="80dp"
             android:layout_marginRight="30dp"
             android:hint="@string/expTitle"
-            android:inputType="text|textCapCharacters"
+            android:inputType="text"
             android:textColorHint="#212121"
             tools:ignore="VisualLintTextFieldSize"
             android:autofillHints="" />
